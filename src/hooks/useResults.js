@@ -23,7 +23,7 @@ export default () => {
 
 // run functions only once
   useEffect(() => {
-    searchApi('cheesecake')
+    searchApi('steak')
   }, [])
 
   return [searchApi, results, errorMessage];
