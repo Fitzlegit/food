@@ -2,13 +2,17 @@ import React from 'react';
 import { View, TextInput, StyleSheet, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const SearchBar = () => {
+const SearchBar = ({ term, onTermChange }) => {
   return (
     <View style={styles.backgroundStyle}>
       <Ionicons name="md-search" style={styles.iconStyle} />
       <TextInput
+      autoCapitalize="none"
+      autoCorrect={false}
       placeholder="Search"
       style={styles.inputStyle}
+      value={term}
+      onChangeText={newTerm => onTermChange(newTerm)}
       />
     </View>
   )
